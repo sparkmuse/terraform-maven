@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -16,4 +17,5 @@ jobs:
           distribution: 'temurin'
 
       - name: Run tests
+        working-directory: test
         run: mvn verify
