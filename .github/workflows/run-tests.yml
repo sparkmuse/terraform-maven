@@ -24,6 +24,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Cache Docker layers
+        uses: actions/cache@v3
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+          ${{ runner.os }}-buildx-
+
       - name: Run tests
         working-directory: test
         run: mvn verify
