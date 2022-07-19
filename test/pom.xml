@@ -71,7 +71,11 @@
                 <executions>
                     <execution>
                         <id>default-jar</id>
-                        <phase/>
+                        <phase>none</phase>
+                        <configuration>
+                            <finalName>unwanted</finalName>
+                            <classifier>unwanted</classifier>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
